@@ -128,7 +128,16 @@ function large() {
 // };
 
 // CODE HERE...
-
+function countdownMaker(eventname, days){
+  var daysssLeft = days;
+  return function(){
+    --daysssLeft;
+    return {
+      event: eventname,
+      daysLeft: daysssLeft // inception
+    }
+  }
+}
 
 
 // *************

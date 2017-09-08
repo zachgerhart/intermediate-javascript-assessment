@@ -81,8 +81,17 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // the other called "mustang".  Using implicit context, invoke the drive method on
 // "charger" once, and invoke it twice on "mustang".
 
-// CODE HERE...
+//CODE HERE...''
+function Vehicle(gasRemaining){
+  this.gasRemaining = 100;
+}
 
+Vehicle.prototype.drive = function() {
+  this.gasRemaining -= 25;
+}
+
+//Vehicle.prototye.charger = charger;
+//Vehicle.prototye.mustang = mustang;
 
 
 
@@ -105,7 +114,18 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // and should neither modify them nor break when encountering them.
 
 
+String.prototype.grammarPolice = function() {
+  var newArr = [];
+  var arr = this.toLowerCase().split(' ');
 
+  for(var i = 0; i < arr.length; i++ ) {
+    newArr.push(arr[i].charAt(0).toUpperCase()+arr[i].slice(1))
+  }
+
+  return newArr.join(' ');
+}
+
+'OH HELLO THERE'.grammarPolice()
 
 // CODE HERE...
 
@@ -141,3 +161,8 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 var theAnswer = "Unknown";
 
 // CODE HERE...
+function promiseCatcher(parameter){
+  parameter.then(function(response){
+    theAnswer = response;
+  })
+}
